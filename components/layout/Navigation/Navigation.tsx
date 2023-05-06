@@ -21,10 +21,9 @@ const Navigation = () => {
   }
 
   return (
-    <div className="relative flex justify-between items-center">
-      <div>LOGO</div>
+    <>
       <nav
-        className={`absolute bg-white top-10 w-screen ${
+        className={`absolute bg-white top-14 w-full right-0 left-0 ${
           !isNavigationOpen ? 'hidden' : ''
         } lg:static lg:w-auto lg:block`}
       >
@@ -41,7 +40,7 @@ const Navigation = () => {
       <button onClick={handleMenuButtonClick} className="p-3 lg:hidden">
         {isNavigationOpen ? <FiX /> : <FiMenu />}
       </button>
-    </div>
+    </>
   )
 }
 
