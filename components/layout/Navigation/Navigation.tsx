@@ -16,7 +16,7 @@ const LINKS = [
 const Navigation = () => {
   const [isNavigationOpen, setIsNavigationOpen] = useState<boolean>(false)
 
-  const handleMenuButtonClick = () => {
+  const handleIsNavigationOpen = () => {
     setIsNavigationOpen(!isNavigationOpen)
   }
 
@@ -31,13 +31,14 @@ const Navigation = () => {
           <Link
             key={link.url}
             href={link.url}
+            onClick={handleIsNavigationOpen}
             className="block lg:inline-block p-3 hover:bg-slate-100"
           >
             {link.name}
           </Link>
         ))}
       </nav>
-      <button onClick={handleMenuButtonClick} className="p-3 lg:hidden">
+      <button onClick={handleIsNavigationOpen} className="p-3 lg:hidden">
         {isNavigationOpen ? <FiX /> : <FiMenu />}
       </button>
     </>
